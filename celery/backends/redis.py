@@ -74,7 +74,7 @@ E_LOST = 'Connection to Redis lost: Retry (%s/%s) %s.'
 logger = get_logger(__name__)
 
 
-class ResultConsumer(async.BaseResultConsumer):
+class ResultConsumer(asyncronous.BaseResultConsumer):
     _pubsub = None
 
     def __init__(self, *args, **kwargs):
@@ -138,7 +138,7 @@ class ResultConsumer(async.BaseResultConsumer):
             self._pubsub.unsubscribe(key)
 
 
-class RedisBackend(base.BaseKeyValueStoreBackend, async.AsyncBackendMixin):
+class RedisBackend(base.BaseKeyValueStoreBackend, asyncronous.AsyncBackendMixin):
     """Redis task result store."""
 
     ResultConsumer = ResultConsumer
